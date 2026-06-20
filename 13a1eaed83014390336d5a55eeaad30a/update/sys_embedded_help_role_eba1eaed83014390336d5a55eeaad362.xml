@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_1919953_parul_0.x_parul.mis_head" name="x_1919953_parul_0.x_parul.mis_head">27a1eaed83014390336d5a55eeaad360</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-05-24 09:52:21</sys_created_on>
+        <sys_id>eba1eaed83014390336d5a55eeaad362</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>27a1eaed83014390336d5a55eeaad360</sys_name>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name>sys_embedded_help_role_eba1eaed83014390336d5a55eeaad362</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-05-24 09:52:21</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

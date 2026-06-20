@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <attributes>browserActivatedIn=safari,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,timeFromCreateToActivate=5995000,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Handles student approval, notifications and data synchronization.
+</description>
+        <display_name_after_preview/>
+        <flow_priority>MEDIUM</flow_priority>
+        <generation_source/>
+        <internal_name>student_admission_approval_flow</internal_name>
+        <label_cache>[{"name":"Created_1.current.admission_date","label":"Trigger - Record Created➛Student Master Record➛Admission Date","reference":"","reference_display":"Admission Date","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1919953_parul_0_student_master","column_name":"admission_date","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["admission_date"],"5f239905-19f3-4c90-8582-23a5f826626c":["admission_date"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["admission_date"]}},{"name":"Created_1.current.department","label":"Trigger - Record Created➛Student Master Record➛Department","reference":"","reference_display":"Department","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"department","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["department"],"5f239905-19f3-4c90-8582-23a5f826626c":["department"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["department"]}},{"name":"Created_1.current.branch","label":"Trigger - Record Created➛Student Master Record➛Branch","reference":"","reference_display":"Branch","type":"choice","base_type":"choice","parent_table_name":"x_1919953_parul_0_student_master","column_name":"branch","choices":[{"used":false,"label":"CSE","image":"","rawLabel":"CSE","selected":false,"missing":false,"reference":false,"value":"cse","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"ECE","image":"","rawLabel":"ECE","selected":false,"missing":false,"reference":false,"value":"ece","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"AIDS","image":"","rawLabel":"AIDS","selected":false,"missing":false,"reference":false,"value":"aids","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"AIML","image":"","rawLabel":"AIML","selected":false,"missing":false,"reference":false,"value":"aiml","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"ME","image":"","rawLabel":"ME","selected":false,"missing":false,"reference":false,"value":"me","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"BBA","image":"","rawLabel":"BBA","selected":false,"missing":false,"reference":false,"value":"bba","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"MBA","image":"","rawLabel":"MBA","selected":false,"missing":false,"reference":false,"value":"mba","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}}],"usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["branch"],"5f239905-19f3-4c90-8582-23a5f826626c":["branch"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["branch"]}},{"name":"Created_1.current.enrollment_number","label":"Trigger - Record Created➛Student Master Record➛Enrollment Number","reference":"","reference_display":"Enrollment Number","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"enrollment_number","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["enrolment_number"],"5f239905-19f3-4c90-8582-23a5f826626c":["enrolment_number"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["enrolment_number"]}},{"name":"Created_1.current.student_name","label":"Trigger - Record Created➛Student Master Record➛Student Name","reference":"","reference_display":"Student Name","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"student_name","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["student_name"],"5f239905-19f3-4c90-8582-23a5f826626c":["student_name"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["student_name"]}},{"name":"Created_1.current.email","label":"Trigger - Record Created➛Student Master Record➛Email","reference":"","reference_display":"Email","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"email","usedInstances":{"3871e130-9403-4fc5-8aef-f6085a537ae1":["ah_to"],"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["email"],"5f239905-19f3-4c90-8582-23a5f826626c":["email"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["email"]}},{"name":"6f54f776-6c73-4d69-9193-d5299c4c79bd.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"f57e01cb-f222-49c8-a2cb-9688dfa195d7":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"{{static.fdf6afe7839dcf14336d5a55eeaad3db}}","label":"Admission Monitor ","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"6f54f776-6c73-4d69-9193-d5299c4c79bd":["approval_conditions"]}},{"name":"{{static.5e34e6f18301c390336d5a55eeaad356}}","label":"Prinkesh Jha","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"6f54f776-6c73-4d69-9193-d5299c4c79bd":["approval_conditions"]}},{"name":"Created_1.current","label":"Trigger - Record Created➛Student Master Record","reference":"x_1919953_parul_0_student_master","reference_display":"Student Master","type":"reference","base_type":"reference","usedInstances":{"6f54f776-6c73-4d69-9193-d5299c4c79bd":["record"],"19fad3e0-9703-46cd-8230-0e248ff777c6":["record"],"3871e130-9403-4fc5-8aef-f6085a537ae1":["record"],"b3558f09-2b6b-4ac0-b468-aa0d9a571743":["record"]},"attributes":{}},{"name":"Created_1.current.personal_email","label":"Trigger - Record Created➛Student Master Record➛Personal email","reference":"","reference_display":"Personal email","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"personal_email","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["personal_email"],"5f239905-19f3-4c90-8582-23a5f826626c":["personal_email"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["personal_email"]}},{"name":"Created_1.current.mobile_number","label":"Trigger - Record Created➛Student Master Record➛Mobile Number","reference":"","reference_display":"Mobile Number","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"mobile_number","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["mobile_number"],"5f239905-19f3-4c90-8582-23a5f826626c":["mobile_number"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["mobile_number"]}},{"name":"Created_1.current.rejection_reason","label":"Trigger - Record Created➛Student Master Record➛Rejection Reason","reference":"","reference_display":"Rejection Reason","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"rejection_reason","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["values"]}}]</label_cache>
+        <master_snapshot>a099f3af83110354336d5a55eeaad382</master_snapshot>
+        <master_snapshot_digest/>
+        <name>Student Admission Approval Flow</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id>7c99f3af83110354336d5a55eeaad3f9</remote_trigger_id>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <substatus/>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 05:59:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>fcb223ef835dcf14336d5a55eeaad3f6</sys_id>
+        <sys_mod_count>47</sys_mod_count>
+        <sys_name>Student Admission Approval Flow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name>sys_hub_flow_fcb223ef835dcf14336d5a55eeaad3f6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <type>flow</type>
+        <updation_source/>
+        <version>2</version>
+        <version_record>c3013e12832d0794336d5a55eeaad32e</version_record>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_variable_value action="delete_multiple" query="document_key=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_flow_record_trigger action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_1919953_parul_0_student_master">status=pending<item display_value="Pending" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="pending"/>
+        </condition>
+        <name/>
+        <on_delete>false</on_delete>
+        <on_insert>true</on_insert>
+        <on_update>false</on_update>
+        <published_version/>
+        <run_flow_in>background</run_flow_in>
+        <run_on_extended>false</run_on_extended>
+        <run_when_setting>both</run_when_setting>
+        <run_when_user_list/>
+        <run_when_user_setting>any</run_when_user_setting>
+        <sys_class_name>sys_flow_record_trigger</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7c99f3af83110354336d5a55eeaad3f9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:55</sys_updated_on>
+        <table>x_1919953_parul_0_student_master</table>
+        <trigger_definition/>
+    </sys_flow_record_trigger>
+    <sys_trigger_runner_mapping action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <data>{"run_on_extended":"false","run_flow_in":"background","run_when_user_list":[],"run_when_setting":"both","run_when_user_setting":"any"}</data>
+        <identifier>fcb223ef835dcf14336d5a55eeaad3f6</identifier>
+        <runner>FDTriggerRunner</runner>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:55</sys_created_on>
+        <sys_id>b899f3af83110354336d5a55eeaad3fb</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-16 10:12:24</sys_updated_on>
+        <trigger display_value="">7c99f3af83110354336d5a55eeaad3f9</trigger>
+    </sys_trigger_runner_mapping>
+    <sys_trigger_runner_mapping action="delete_multiple" query="identifier=fcb223ef835dcf14336d5a55eeaad3f6^sys_idNOT INb899f3af83110354336d5a55eeaad3fb"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=fcb223ef835dcf14336d5a55eeaad3f6^sys_idNOT IN38b223ef835dcf14336d5a55eeaad3fb"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>fcb223ef835dcf14336d5a55eeaad3f6</id>
+        <name>Student Admission Approval Flow</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 05:59:58</sys_created_on>
+        <sys_id>38b223ef835dcf14336d5a55eeaad3fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 05:59:58</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=38b223ef835dcf14336d5a55eeaad3fb"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=fcb223ef835dcf14336d5a55eeaad3f6^sys_idNOT IN3dc267ef835dcf14336d5a55eeaad3bc,8ac2ebef835dcf14336d5a55eeaad373"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</model>
+        <model_id>fcb223ef835dcf14336d5a55eeaad3f6</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_fcb223ef835dcf14336d5a55eeaad3f6</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:00:18</sys_created_on>
+        <sys_id>3dc267ef835dcf14336d5a55eeaad3bc</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:52</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=3dc267ef835dcf14336d5a55eeaad3bc"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</model>
+        <model_id>fcb223ef835dcf14336d5a55eeaad3f6</model_id>
+        <model_table>sys_hub_flow</model_table>
+        <name>var__m_sys_hub_flow_input_fcb223ef835dcf14336d5a55eeaad3f6</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:00:20</sys_created_on>
+        <sys_id>8ac2ebef835dcf14336d5a55eeaad373</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:52</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=8ac2ebef835dcf14336d5a55eeaad373"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=fcb223ef835dcf14336d5a55eeaad3f6^sys_idNOT INd9c267ef835dcf14336d5a55eeaad3d3"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:00:17</sys_created_on>
+        <sys_id>d9c267ef835dcf14336d5a55eeaad3d3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VYXW/iOBT9K1GedqSulA8oTd9moKOtNDOVgNl96FaRE9sQrXHY2EnLjPrf9zpfhHxQKOksfUGK7fiee3LuuTb3P3WGPML0a32OPEb0Cz3gkkQcsflmTWBYqmGXo5WaWyGOkQyjjX4to5hc6DQKV3OyWjMkYTFFTMBgGGES6dfmhZ4gFpPZRtxi2AneT7fJ99TzaXh+ck3HdJyh7a5RFDPXcIWMMeHSXSEBaGApDgQE2fyZvzHL5rWvxby/DBiOCNev7x8udNgGIqmZ65+1qUBB8amPHIsYvm3almUY1tXA9C5tz7SwjYhhwIZ1WmrQZQs727zJkyQcE1xS0iAuIgjfcbYpVyyB94ykFXoSwQ/Y/cpQ6ygB7D7J5spHNyckG/aXYeCTu7UMQp6NZDizyZDFK/4tw6+oJBTFTBZUwkgsYD+yVpAViBwRnS3Dx2kR8HPA0+zySRb6iJVPSMoo8GJJhCKcBgyodzNuRBhHKfrpzfhuOnH/+jgf/3Ezdac3s/n0djy/mejPaV7uv7HaMUOYY3GzdJ7L7/85IEx9wEIfOfPCj4K1/OjLIClk+HyxlfY45DhIuWnI2y+mxK68Cw726dswOhXuVyIWKhcSyVj8HRuGjVV+AV8cLdzLS4QwQR3C9WhFuNWkW1DJlvyrie2TcD5yiIYHhvE/qTg3qNeKeBViwibb7XSYXCxA1gFfx1Kx9Yi4FK4MXYSxW+FRLQVML6k6y60p7ZflHMUctnDLL9QUdUpkyeiXQEAC91CYBVvpljBPv+RbTmOuhfAp4Ufz4yhS3lpYHb1doUXOMZ0RRnxZkQX9LqpPXwMhlLC3qMugKSuNmGU4kJdWpJTFFicGf+izopukJzUyay3q6No2TUo9Qi1jpCrbNGyPmsbIGCKKbcPwrUptN8F0opQ1SbxJjR9X4SIVIztAenWKc/BGtRoOklGyq8GCBCWR3EjG/UAze4JmKWg1Q7SPcsRSltnwZFed+1Lr+TiAcILgDXyoMaoFBzggZeEjmPEr3M9D/j+LKIw5rtuR2lMLuLZdof2W8/ehRyekYUT2A9hdcU4euKW9EC7imx7cz6am55ABMcD0bPA7b+g4no8sSkeXI2KZNffbwmjF9i5c7wW1JW1y7XLAVuEkbXo7wvtOANjwwaMBnu6AuTBb/S+bex9O97gk3AWokcuUlzUMb8ECTIq5fqu9ETrZ1vepFU+vHH9ojkb+CO4xUPF0QDxkDqwhckaX9tWwVvENKPtgyhZmfsntRmxECqTDDb6L/N+Kc7qvv6VsBZEyu+ge26U5nGPTd1AWpNIp1WfRUlMJI+1byH+/3a7TZgQaYHrF7atdH4JCfVjtbWF4oVw2zgsQ+hOM74RW58wOVs7uSlUTSbKb68lXKjK4GjrUbrcY6rRZzBZMN8yzP14cWCFJZ621nTMOFXzSWjedB4NXSLgmk+qJYc+Rpi9SzN5Jsd6OFPvkY1RRi533yNeAfUctLD1XnNLHVEzihrRq3pNQgwkNgmgB1fL/FgnWvI0mlwQoZXBehoCain6qa1e7SBNKqeBfCyQ7gTe6GQxr+QHq/BpVTQr93oAJHqHh0O44Dzv1G3AboBfwnn3bOroqkrYi29u7jtu3vmdr96pIdlcRB/alXrNub06nZd3anl7K+vTGs+/+3oLiTFvKw3/zQWP5ZB8AAA==</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=fcb223ef835dcf14336d5a55eeaad3f6^sys_idNOT IN28636b23839dcf14336d5a55eeaad38a,2c75ff6783110354336d5a55eeaad33a,36fa232383ddcf14336d5a55eeaad34b,6576bfe783110354336d5a55eeaad34e,a548b7eb83110354336d5a55eeaad389,c4fb23a383ddcf14336d5a55eeaad303,e699e36f839dcf14336d5a55eeaad384"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:02:57</sys_created_on>
+        <sys_id>28636b23839dcf14336d5a55eeaad38a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>6f54f776-6c73-4d69-9193-d5299c4c79bd</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YXW/bOgz9K4Gf00yOY8fOW7GiwC7u7oC220tTGLJEt7pQZM+Wu2ZG/vsoW47TNMuCLlu3YS8GRInkIXmoD1/XjuDOzJmG6RiiaEwSlxCPkNBnJPQg8abB1KOMOENH0QXgygJYVnAc31NZGUFdvy6AauCxO2JVUYDSqxXOc1Hmki4/2GUoYXdCcpx3Ztc3QyenBVrUUDizemtKL3OIJU1AouJZxqoFGh28OUMbh6LttC86uNvwjQ8cc2s9FkaIUwYPGTrwoEFxQG8plSUMnQVVnOqsWDozXVQowKD5OyWX6xV3Quk20AV9KMVnNO+NzboUMDJmk7AexjZBXW4yweBdrkWmWommiewSl8lqof5rIzCphZRWUm+ktirRHuQGsgHRIkwv77JPF52/c6Ga4CxamTEq1yOqdSGSSkNpqgESmpwsaJ4LdRvnRXYvGmWEshjdShyMUpl9Qp+luFUjygzuESaIjs5RftaIP9BCmCDeohlUXjXBxx8r47cNwwKOm5jbgHFVyQqR61O0eQ8W4WpoiZqwvaVnfaVbcz1PH2I3cqPI92JkXiVjEpe64m2YpaHhE8petvODt9388wh8ZYAMmuoNDw7ikfLToCx7m2GsWtOWvO5+8lrJIewNycuw1yL6zej7LebCJPB8/ExTj7hjl4QQhCGLCGVhEPgTry8y+kPEVMZYpBJt9xw+4rZ6iRlTtx0jDwDXKZ5adIOLDt1XYVuWlp0ry9Dx0RjqBr8pRStxtZWbVvLvdnV+DJeNu/dKfKzgjal+ME6CiIT8hKckOZmEnn9CGZATCFwffB4w3/W+m//E3bfp8XAHkVIBkv8Y+p8b04825QPwPWmBcwvwa8BtAzTDrW36eE0QEvJCXfDnXjPYXjLAxmb9f1YV6mdz9QB4nfI/Lb5tqm7D3sNU7y9Tf2GmTvy9VIAduxPLFBcGX7nB13ZPg/JULd9f13WpqRZslPI0oClMQy/iLHUnnhdwn/o+AKXc48lqdfOU6N9j6nkd0t9JKgll1yUHpGb9TLR6e1Nle6S/51gl2yeTY70aX65N/qibdyc0wHYVFMW7GmvVHwJ7+ZNGPV94hWmkevO5Wc+dNri5M5s7KlMwd4Zzx6yKDZEaMa7AoNYTjayuV6tWUhXUGnA3hr02p8uyWVmyO+BIxkb6SNJ2iJUf86/MpXUwOEPcr67Extn07aytf+1Urf7ORHaPhy6SNnNi82Tyj3YyTf423NbzIO5axhxEuHU9+/5/8wWrRBANZBQAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=28636b23839dcf14336d5a55eeaad38a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:21:53</sys_created_on>
+        <sys_id>2c75ff6783110354336d5a55eeaad33a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>5f239905-19f3-4c90-8582-23a5f826626c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HOhmHHbdDkNmwIsENbYBl66VqBtphEgCx7+kiTBf7vo2znq1vaYhgwFJhvIh/JRz6Jvt8yKdiEjVJMLsfpqMjSLBsmyfDqIs1HWZ4ORQaIFyxiGkokpINcIW8PEVuB8sG45uk4HY8vM16D8YonvJSWW+cFamcJKKStFWzuevz159lgdvAWS6mEQc0m9w8RoxSU3aFhk+0zl9vUyBXkqCjJ18BkcNMxeWsXJ8FnugpVntsqIwKhJGK4dqgFUr05KIsRK0ELcJXZsIkzngwGQdxqtdkjllI7SsgCdm3lD8p+lQTcHKm1Ajvf/sj7aXXmYlnJAm9rJyvdWVpivbNSvtQ3XRNhzjgHr9xuzmTxlvJhHSgHEj2j+WxZPX3ZFZxK3XbXO1VVgNqfwDkjc+/QBj1QYUmJeAl1LfWC16ZayTaYuJTxQtEhnqvqiYpaudAxFIF4TBOCeEr2T635DowMXVxTGgpu2u75dx/qdn30jHnXNAFsYWTtPlC6Ffbkmmh3fQUm47PCp/lB6PbG2qOr21/SVudvPkkysd1+JAUdCp7GhTc0IRcfo5rmEbWpVDsH7csczfnAFnkMDdElSPVCSHATLDegi+V5XOcnIA0LjAs1zoMPGAoAQc/TkiycZHmh61McBVoHztsugJQj7VE8llUuw0N5ZRInMMpFuttKg+KvjOMU1zS/bpP/Er4/Cf9w5WNJwjscdNJHb379uwRTiUrY36yD3c7vC/BVX6Df++nf2vvpKGm/f7P9O57vbPkf/YfP/AYefgIfv6iQxwgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2c75ff6783110354336d5a55eeaad33a"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:36:09</sys_created_on>
+        <sys_id>36fa232383ddcf14336d5a55eeaad34b</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>3871e130-9403-4fc5-8aef-f6085a537ae1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y227jNhD9FULoo6vI9zhvaYygiza7ReJuUWwWAkXSNruUqJJUHNfwv3eoiyXF19hpsAX8KJJzOTPnDCV9WTicOldOh156vWDcwX2v3Wp73mVrMAjag7F32R94TUKdhhPhkMFJxYhU9vkJi8QuLBY3imHDqN90SaIUi8xyCfuU61jg+ef8GKyQKRcU9p2rL18bTowVeDRMOVeLF1tmHjNf4IAJMBxKkoTgFH0Ygo9Dsy2sR1hNmEH3RdYvUdhQ8EzzID63i7Bl0/IaDns2LKIMgo6x0KzhhDii2Eg1X60AePopEuXClEcGXF5rLQmHwmhkpgyxEHOBZtxMEUZZeNex/p41/wdSaLesqzGDIhCbEY8Ip5CRU1n285rC9odym0wlJ+xTbLiMskIbHIii5lIkYfQxQ227wsY4EabSlUSDXxZbmDZvoxLAMH6Yytl9EfeWR2lBcoBCEixWT9gYxYMEcKaNFAyr0p+fpmR9QiQmWFrjEMcxjyZ+rOQTTx1DmqE7EfDgjoWcgb3mk8jFxGJyoeDYvYX1Ybr8GStuAd6BGzBepgXy/05sThnEenB71k/7Dkc1UTw21+D4ieUQlo1cBM3BLlrRTkmfis9SCM9+c9AcDLptH6idCN/ztUloBlhbnq9p4iHbR3fF/nEKGdls0Mcsm0OR1Iy3IMvFUVvLtdE8SRsjEITJlJlJAZk8jZUeLr26Hrbo4M35nyd6tAD+G5JDX7WfcTfHlgbfS/59lPd6vSDoBd1+uyTKgIxpPxj3cJ+0S2LMYJKpEKtvfjrJKrxvrhM7F/yRdAbji9sUXuPgLAtjmIsCRIX+KNLdhSDndyAlTK2oJHfrJHJnTERGIuidmMO4X0W2i+VlYKbYIK6Rhna5aCQRz5OvWDTQXCYoTLSBYwZ2arKp3SCdd1FM3tp8dbix7/8LSZ0qne7uGYtL4uGpb+TuNyY3ZcRyida1tOf0cRp7gPpGk0JfB0BZiVOu48plpAufuYrau1WUvWisiahyAXjnK6B2BVAmeMjT5mZKO5XCdGffmVdrNSEVCr/h+32digekVBje3Kznt4WKneMG+pmL78fF5s5vOtar9Tp4HzIekFNh+NMLNga76Ng90/F7p2N3d+tJrdk6Cf5ixFQo+ehc05BrbV8Er2OLktHHDUTdeu5NrvX9GFaGKwSbUG2hce98wX9PL6R4Z7vHrfp8knRe5WvieW0SI5vhj4ZH85AwJaUJoAzf0k2g5WN2jA0ZVuiHRfH3whZ+2cg8XMTZkcfoVR7/lIlCeKWEKdYoYCyyH1CpJNzMW6Cy479Aq+DDSrFYKmO/qebWXjEds7QyCCqHlbE9ck/K655NsKK6UQ//m/29g36PIJLS3MzrITaIPAv5+uK9sjjo4s3Ksxl+EWBvAY6bXj+P7n4tZtcBZF5dvRmV17idT62pCUU5s/onXr29brfdO0+t6t0bz2iLKhnHObaT7t+v/wIGh61VkhgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=36fa232383ddcf14336d5a55eeaad34b"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:26:19</sys_created_on>
+        <sys_id>6576bfe783110354336d5a55eeaad34e</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4HOhmHXbdDkNrTIbS2wDr10rUBbTCJAlj19pMkC//dRtvPVzW0xDBgKzDeRj+Qjn0w9bJkUbMrGKSYXk3RcZGmWnSXJ2eV5mo+zPD0TGSCes4hpKJGQDnKFvD1EbAXKB+Oap5N0MrnIeA3GK55wgaC5dV6gdpaQQtpawea+D7gm9+ju4C6WUgmDmk0fHiNGSSi/Q8Om2xcut6mRK8hRUZavgcvopuPy3j5Oggf6ClVe2iojAqEkYrh2qAVSvTkoixErQQtwldmwqTOeDAZB3Gq12SOWUjtKyAJ2beUPyn6ZBNwcqbUCO9/+yPtxdeZiWckCb2snK91ZWmK9s1K+1DddE2HQOAev3G7QZPGW8mEdKAcSPaP53bJ6/rIrOJO67a53qqoAtT+Bc0bm3qENeqDCkhLxEupa6gWvTbWSbTBxKeOFokM8V9UzFbVyoWMoAvGYJgTxjOzXrfkejAxdfKY0FNy03fPvPtTt+ugZ865pAtjCyNp9onQr7Mk10e4CC0wmg8Kn+UHo9s7ao8vb39JW528+STKx3V6Rgg4FT+PCG5qQi49RTfOE2lSqnYP2ZY5mOLBFHkNDdAlSvRIS3ATLDehiOYzr/ASkYYFxocYw+IChABCltJZk4STLK12f4ijQOnDedgGkHGmP4qmschl+lDcmcQKjXKS7rTQo/sY4TnFN8+s6+S/hx5PwD1c+liS8w1EnffTuv3+XYCZRCfubdbDb+X0BvuoL9Hs//Vt7Px0n7fdvtn/H84Mt/6N3eOAZePwJ/UNcEckIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6576bfe783110354336d5a55eeaad34e"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>29c7e163-ba52-4ad2-b30e-401ca255345b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:34:14</sys_created_on>
+        <sys_id>a548b7eb83110354336d5a55eeaad389</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>b3558f09-2b6b-4ac0-b468-aa0d9a571743</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K0HPxthxEpq8jYXAHtpCO/rSFSFL14mG/DF9pMlC/vuubDlN27ULJTAG05vux7nnXB10vyNSkBkZgUjSaTrhWZplwyQZXozSfJLl6VBkDCAlEalYCVipgdda4H3NlPOB3e6zBmZB0DTmTmuo7H6PeSFNo9j2LpRhhK+kEpgns/uHiDRMI6IFTWa7Fym7bYAqloPCxnnNXYmggy9zxDiVbd9909N9Sd/PwLsI6FT6IKY8nzSJCGwsVAJwXMGUgYiUrBLM1npLZlY7DKBqcV2p7aFiJSvbKS3ZxsifiD9KfF0BKI2HLRyuNGyoX04tOVw3VtZVF7EsV/3mauXK6qqT4HcLBXPKHu3WGcSDxlP2JDqGxe2qfrzp5y1k1aoLbFXNmTrcmLVa5s6C8c8BCtqllKxpZLWkja7Xsm1GKmW8VHiJC1U/4kwjl1XMuOcd44JYvMD4vA3fMS29iEuEweZ9K57+cH5uJyMQpq3mVjBtHwpLDdeysZ8QeA2B5j4Kds3H7xmAT5/e+wjzybIbis3T6TijaEKnaEKNdaITbLwjX7n3tssPLvv8x7z81bMZXHVsTlXyrPkNZcHNz2LBzOOzmfniL5k5MPrH3PwnDyfDdz+xo5dubWuO/Gsss858c0mSodG+A8ff97Vn36j6oHOhRGwLgw49OllDD7CQoIT5jajeumEAXYcBh7/4bP5NJ0l7/n/JZ/ySH34Bx2jmH0MIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a548b7eb83110354336d5a55eeaad389"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:40:20</sys_created_on>
+        <sys_id>c4fb23a383ddcf14336d5a55eeaad303</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>35ae8ce7-962f-41c4-b21d-f1bd086632ba</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/aQBD9K9GeLcvGCQrcqlbcmkhtlUuarMbeAbZar539IFDEf+/s2hCgIYmqSlWrctuZN2/efOC5XTMp2JgNc8wuRvmwKvKiGGTZ4PI8L4dFmQ9EAYjnLGEaaiSkg1Ihj4+ELUD5YFzyfJSPRhcFb8F4xTMuH6Di1nmB2llCCmlbBaubPuDYXc2lEgY1G9/eJYxIiN+hYeP1kcutWuQKSlTE8iVoObvqtLy1joPgE3WFLMe2xoggKEsYLh1qgZRvCspiwmrQAlxjVmzsjCeDQRDXWq12iLnUjghZwC6t/E7sl1nATZFKq7Dz7Z68b1dnruaNrPC6dbLRnSUK652N8rW+6ooIjcYpeOW2jSaLt8SHbZAcRPSKpp/nzeOnbcKJ1LG63qmaCtTuBc4ZWXqHNswDFdZExGtoW6lnvDXNQsZg0lKnM0WPdKqaR0pq5UynUAXhKXUI0gnZP0TzDRgZqvhINBS8idXzBx/ydnX0inlXNAFsZWTr3hHdAntxm2S7wAKz0cnB5+XToOPO2r3lXa/f07wcCp6nlTfUD5ca/IZRNieXbfRmc99va1yHrz7LCvFc4D6KglCbRsV2aV+XaE4HRuQ+NETXINULIcFNsNKAruancZ2fgNRTMC7kOA1+wlAAiFpaG9pA03uh6kNcbBY4b7sAGjCtCIp7mjO1EhR/pa5DHLHVTSnDH/GVFh7ANpufvzr/J/3PTvoXDwjWtB8Oz7oNSd78LdkSTCQqYZ/5uGwvSJ+AL/oE/RXJf9cVyYdZ/P2ZW9Lp/MtOyd5VP3FU7n4A8TkZTRcJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=c4fb23a383ddcf14336d5a55eeaad303"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:30:08</sys_created_on>
+        <sys_id>e699e36f839dcf14336d5a55eeaad384</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>19fad3e0-9703-46cd-8230-0e248ff777c6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UXWvbMBT9K8HPxthxEpq8jYbAHtpCO/rSFSFL14lAlj19pMlC/vuubDlN27ULJTAG05vux7nnXB30sIsEj2bRCHiaTbMJy7M8H6bp8GKUFZO8yIY8pwBZFEeKVoCVGlitOd7XVDof2O0uNVALnGQJc1qDsvs95rkwjaTb+1CGEbYSkmM+mj08xlFDNSJa0NFs9ypltw0QSQuQ2DivmasQdPB1jhinsu27b3u6r+n7GXjnAZ0IH8SU55OlcQQbC4oDjiupNBBHFVWc2lpvo5nVDgOomt8ouT1UrISyndKKboz4ifij1NeVgNJY2MLhSsKG+uXUgsFNY0Wtuoilhew3V0tXqetOgt8tlNRJe7RbZxAPGk/Zk+gYlner+um2n7cQqlUX2MqaUXm4UWu1KJwF458DJLRLqWjTCLUkja7Xom1GKlWylHhJSlk/4UwjliqhzPNOcEE0WWB83obvqRZexBXCYPO+FU9+OD+3kxEIk1ZzK5i0D4WlhmnR2C8IvIZAcx8HuxbjjwzAps/vfYT5bNkNwebpdJwTNKGTJCXGOt4JNt6Rb9x71+UHV33+c17+5tkMrjs2pyp50fyOsuDmF7Fg5vHZzHzxl8wcGP1jbv6Th9Phh5/Y0Uu3tjVH/jWWWme+uzTNOZJBOcDfevadqk86FyrEtjDo0OOTNfQACwGSm9+I6q0bBpB1GHD4i8/m32yStuf/l3zGL/nxF3BsDnpDCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e699e36f839dcf14336d5a55eeaad384"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=fcb223ef835dcf14336d5a55eeaad3f6^sys_idNOT IN6a08f7ab83110354336d5a55eeaad3a3,baa8672b839dcf14336d5a55eeaad3cb"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d099f3af83110354336d5a55eeaad314</block>
+        <comment/>
+        <connected_to>f57e01cb-f222-49c8-a2cb-9688dfa195d7</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:33:13</sys_created_on>
+        <sys_id>6a08f7ab83110354336d5a55eeaad3a3</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>29c7e163-ba52-4ad2-b30e-401ca255345b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9c99b3af83110354336d5a55eeaad3fe</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:26:03</sys_created_on>
+        <sys_id>baa8672b839dcf14336d5a55eeaad3cb</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-20 15:26:17</sys_updated_on>
+        <ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1UTY/TMBD9K6uc0ygfTUp6q0CLkICV2NVe2FU0sZ3WwrGD7Wy3VP3vjOOkW0ErENojt8ybr/fGM9kHqrddb82dWhnD1zJYfn0MAy4dht/7QELLgmVAlKTcciWrAQiDJxC9c6y6Tis0rt5rkJZRdFFuOgG7+8sRZMMF1Wzs1oHGmpbpYLn/xWV3HasE1ExgoVuruVxjOqdoNTE0SUkSkqVFlsZx+mae1EVWJynNgEGGcVPi24n81ccBCS+qcv0QN1MnpamjlcRhwJ4tkxTpLxsQhoVBC5KCVXp3RDQDeiPFC7Dh0mK5wAU/G/4Da6d57gIbhhoJ886jWY2j8zDZKE7YTecIesRCLcYcokTfys9ehxs6a6AXdho6Ir3BeqxzpB2LkVJzu1HbL1PDay4HgaNTKALiaIHFMdS9ZcY9DBOsxUJVC12Hw6nco/IhGbm00VqgETVCbbGp26QIiCMe4Ywgukb83QDfg+ZOxScsg8meZg2Gk2rYOixnNUo4DGOpvveOkBc4Sqn8NDDAEM07u8I+T2xkfQh/X9mTbd3viyafN4tFMSvIIpvNaVHOyqTMZjRPy5LMyaKsaQTjylbGgmWHw0Mfxxn16LkVf62yr3EXJeRNnsT5+buYF+fu4sxFXD6G9A/H4J7vL28hjuP/x3B6DNxUfqlHbUPzf76FR7f4voPxe0MZ4QaJ3Dnsw/SXd44dLgAnp9BW6W9Owgt2+An1QLLRLwYAAA==</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_fcb223ef835dcf14336d5a55eeaad3f6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:00:19</sys_created_on>
+        <sys_id>0ac2ebef835dcf14336d5a55eeaad36f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 06:00:19</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_fcb223ef835dcf14336d5a55eeaad3f6</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 06:00:20</sys_created_on>
+        <sys_id>82c2ebef835dcf14336d5a55eeaad37a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 06:00:20</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_fcb223ef835dcf14336d5a55eeaad3f6"/>
+    <sys_hub_flow_snapshot action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>true</active>
+        <annotation/>
+        <attributes>browserActivatedIn=safari,integrationActivatedIn=standalone,labelCacheCleanUpExecuted=true,viewActivatedIn=naturalLanguage</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <copied_from/>
+        <copied_from_name/>
+        <description>Handles student approval, notifications and data synchronization.
+</description>
+        <flow_priority>MEDIUM</flow_priority>
+        <internal_name>student_admission_approval_flow</internal_name>
+        <label_cache>[{"name":"Created_1.current","label":"Trigger - Record Created➛Student Master Record","reference":"x_1919953_parul_0_student_master","reference_display":"Student Master","type":"reference","base_type":"reference","usedInstances":{"6f54f776-6c73-4d69-9193-d5299c4c79bd":["record"],"19fad3e0-9703-46cd-8230-0e248ff777c6":["record"],"3871e130-9403-4fc5-8aef-f6085a537ae1":["record"],"b3558f09-2b6b-4ac0-b468-aa0d9a571743":["record"]},"attributes":{}},{"name":"{{static.5e34e6f18301c390336d5a55eeaad356}}","label":"Prinkesh Jha","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"6f54f776-6c73-4d69-9193-d5299c4c79bd":["approval_conditions"]}},{"name":"{{static.fdf6afe7839dcf14336d5a55eeaad3db}}","label":"Admission Monitor ","reference":"sys_user","reference_display":"User","type":"reference","base_type":"reference","usedInstances":{"6f54f776-6c73-4d69-9193-d5299c4c79bd":["approval_conditions"]}},{"name":"6f54f776-6c73-4d69-9193-d5299c4c79bd.approval_state","label":"1 - Ask For Approval➛Approval State","reference_display":"Approval State","type":"choice","base_type":"choice","choices":[{"label":"-- None --","value":"","order":0.0},{"label":"Not Yet Requested","value":"not requested","order":1.0},{"label":"Requested","value":"requested","order":2.0},{"label":"Approved","value":"approved","order":3.0},{"label":"Rejected","value":"rejected","order":4.0},{"label":"Cancelled","value":"cancelled","order":5.0},{"label":"No Longer Required","value":"not_required","order":6.0},{"label":"Skipped","value":"skipped","order":7.0}],"usedInstances":{"f57e01cb-f222-49c8-a2cb-9688dfa195d7":["condition"]},"attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"Created_1.current.email","label":"Trigger - Record Created➛Student Master Record➛Email","reference":"","reference_display":"Email","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"email","usedInstances":{"3871e130-9403-4fc5-8aef-f6085a537ae1":["ah_to"],"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["email"],"5f239905-19f3-4c90-8582-23a5f826626c":["email"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["email"]}},{"name":"Created_1.current.student_name","label":"Trigger - Record Created➛Student Master Record➛Student Name","reference":"","reference_display":"Student Name","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"student_name","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["student_name"],"5f239905-19f3-4c90-8582-23a5f826626c":["student_name"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["student_name"]}},{"name":"Created_1.current.enrollment_number","label":"Trigger - Record Created➛Student Master Record➛Enrollment Number","reference":"","reference_display":"Enrollment Number","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"enrollment_number","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["enrolment_number"],"5f239905-19f3-4c90-8582-23a5f826626c":["enrolment_number"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["enrolment_number"]}},{"name":"Created_1.current.branch","label":"Trigger - Record Created➛Student Master Record➛Branch","reference":"","reference_display":"Branch","type":"choice","base_type":"choice","parent_table_name":"x_1919953_parul_0_student_master","column_name":"branch","choices":[{"used":false,"label":"CSE","image":"","rawLabel":"CSE","selected":false,"missing":false,"reference":false,"value":"cse","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"ECE","image":"","rawLabel":"ECE","selected":false,"missing":false,"reference":false,"value":"ece","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"AIDS","image":"","rawLabel":"AIDS","selected":false,"missing":false,"reference":false,"value":"aids","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"AIML","image":"","rawLabel":"AIML","selected":false,"missing":false,"reference":false,"value":"aiml","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"ME","image":"","rawLabel":"ME","selected":false,"missing":false,"reference":false,"value":"me","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"BBA","image":"","rawLabel":"BBA","selected":false,"missing":false,"reference":false,"value":"bba","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}},{"used":false,"label":"MBA","image":"","rawLabel":"MBA","selected":false,"missing":false,"reference":false,"value":"mba","parameters":{"name":"x_1919953_parul_0_student_master","dependent_values":[""]}}],"usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["branch"],"5f239905-19f3-4c90-8582-23a5f826626c":["branch"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["branch"]}},{"name":"Created_1.current.department","label":"Trigger - Record Created➛Student Master Record➛Department","reference":"","reference_display":"Department","type":"string","base_type":"string","parent_table_name":"x_1919953_parul_0_student_master","column_name":"department","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["department"],"5f239905-19f3-4c90-8582-23a5f826626c":["department"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["department"]}},{"name":"Created_1.current.admission_date","label":"Trigger - Record Created➛Student Master Record➛Admission Date","reference":"","reference_display":"Admission Date","type":"glide_date_time","base_type":"glide_date_time","parent_table_name":"x_1919953_parul_0_student_master","column_name":"admission_date","usedInstances":{"35ae8ce7-962f-41c4-b21d-f1bd086632ba":["admission_date"],"5f239905-19f3-4c90-8582-23a5f826626c":["admission_date"],"ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8":["admission_date"]}}]</label_cache>
+        <master>true</master>
+        <name>Student Admission Approval Flow</name>
+        <natlang/>
+        <outputs/>
+        <parent_flow display_value="Student Admission Approval Flow">fcb223ef835dcf14336d5a55eeaad3f6</parent_flow>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <status>published</status>
+        <sys_class_name>sys_hub_flow_snapshot</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a099f3af83110354336d5a55eeaad382</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <type>flow</type>
+        <version>2</version>
+    </sys_hub_flow_snapshot>
+    <sys_translated_text action="delete_multiple" query="documentkey=a099f3af83110354336d5a55eeaad382"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a099f3af83110354336d5a55eeaad382"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=a099f3af83110354336d5a55eeaad382"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=a099f3af83110354336d5a55eeaad382^sys_idNOT INe499f3af83110354336d5a55eeaad383"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>a099f3af83110354336d5a55eeaad382</id>
+        <name>Student Admission Approval Flow</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>e499f3af83110354336d5a55eeaad383</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=e499f3af83110354336d5a55eeaad383"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=a099f3af83110354336d5a55eeaad382^sys_idNOT IN6499f3af83110354336d5a55eeaad3a8,6c99f3af83110354336d5a55eeaad385"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,test_input_hidden=true,uiType=table_name,uiTypeLabel=Table Name</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>table_name</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">table_name</internal_type>
+        <label>Table Name</label>
+        <mandatory>false</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</model>
+        <model_id>a099f3af83110354336d5a55eeaad382</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_a099f3af83110354336d5a55eeaad382</name>
+        <next_element/>
+        <order>101</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>6499f3af83110354336d5a55eeaad3a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6499f3af83110354336d5a55eeaad3a8"/>
+    <sys_hub_flow_input action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <array>false</array>
+        <array_denormalized>false</array_denormalized>
+        <attributes>element_mapping_provider=com.glide.flow_design.action.data.FlowDesignVariableMapper,uiType=document_id,uiTypeLabel=Document ID</attributes>
+        <audit>false</audit>
+        <calculation><![CDATA[(function calculatedFieldValue(current) {
+
+	// Add your code here
+	return '';  // return the calculated value
+
+})(current);]]></calculation>
+        <choice/>
+        <choice_field/>
+        <choice_table/>
+        <column_label/>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent>table_name</dependent>
+        <dependent_on_field>table_name</dependent_on_field>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>current</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <help/>
+        <hint/>
+        <internal_type display_value="">document_id</internal_type>
+        <label>Record</label>
+        <mandatory>true</mandatory>
+        <max_length>200</max_length>
+        <model display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</model>
+        <model_id>a099f3af83110354336d5a55eeaad382</model_id>
+        <model_table>sys_hub_flow_snapshot</model_table>
+        <name>var__m_sys_hub_flow_input_a099f3af83110354336d5a55eeaad382</name>
+        <next_element/>
+        <order>100</order>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference/>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <sizeclass/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_hub_flow_input</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>6c99f3af83110354336d5a55eeaad385</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package/>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>true</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_hub_flow_input>
+    <sys_hub_action_input_action_instance action="delete_multiple" query="action_input=6c99f3af83110354336d5a55eeaad385"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=a099f3af83110354336d5a55eeaad382"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a099f3af83110354336d5a55eeaad382"/>
+    <sys_hub_trigger_instance_v2 action="delete_multiple" query="flow=a099f3af83110354336d5a55eeaad382^sys_idNOT INe499f3af83110354336d5a55eeaad3c9"/>
+    <sys_hub_trigger_instance_v2 action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <name>Created</name>
+        <published_version/>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>e499f3af83110354336d5a55eeaad3c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <trigger_definition display_value="Created">798916a0c31322002841b63b12d3ae7c</trigger_definition>
+        <trigger_inputs>H4sIAAAAAAAA/9VY227jNhD9FUFPLZACuthxlLetk0UDZBPA9rYPaSBQImkLpSlXpJR4F/n3DnWxZV0cX+TUeTFgkuacOTxzhvTTT50hjzD9Wp8gjxH9Qg+4JBFHbLJcEBiWatjlaK7m5ohjJMNoqV/LKCYXOo3C+YTMFwxJWEwREzAYRphE+rV5oSeIxWS8FHcYdoLfp9vke+r5NHx/dU3HdJy+7S5QFDPXcIWMMeHSnSMBaGApDgQEWf6Z/2KczWvfinl/FjAcEa5fPz1f6LANRFIz1z8rUxLScjdy1h6y5AIF0qc+cixi+LZpW5ZhWFc907u0PdPCNiKGAeuqhFWSkg28rRkhr5JwTPCKrBqlEUH4kbPlasUMTiSjb45eRfADdr8y1DpKICufZHOrr25OVTbsz8LAJ48LGYQ8G8lwZpMhi+f8IcOvSCYUxUwWJMNILGA/slCQFYgcER3PwpdREfBrwNPs8kkW+oitviEpo8CLJRHqKGjA4FDcjBsRxlGKfnQ7fBzduH99mQz/uB25o9vxZHQ3nNze6G9pXu6/sdoxQ5hjcbN03lbK+BoQpg6wUE7OvPCjYCG/+DJICoG+XaxFPww5DlJuasL3iymxKfyCg23KN4xW7fuliIX+hUQyFn/HhmFjlV/ApwdLeliGnUr68hIhTFCLpD1aknSZjga8soGZcsrbxJ2P7KLunmH8T/rOTe1Qec9DTNjNejsdJqdTEHzAF7FUbL0gLoUrQxdh7JZ4VEsB03t6z3Kri/59oUcxhy3c1QnV5Z4SuWL0PhCQwBOUbMFWuiXM0/t8y1HMtRCOEj40P44i5ceFCdK7OZrmHNMxYcSXJVnQ76L87VsghJL8GvUqaMpKLeYqHMhLK1LKYosjgz93Wet10pMKmZW2dnjVF6eXVrxpUuoRahkDVe+mYXvUNAZGH1FsG4ZvlSq+DrEVu6wI5SSVv1/di1SibAdBVonPwRvlGtlJXMmmMgsSlHByexl2A83sCJqloFVs0t7LJ1dizYZvNjW7LbWOrw8IJwh+gXe1S7VgB1+kLHwBiz7AEz3k/zONwpjjqkmpPbWAa+sV2i85f7926I80jMh2AJsrzskZ17QXwkV8eTJPtKnpOaRHDLBCG1zQ6zuO5yOL0sHlgFhmxRPX4BoRfwovfEeDSZOI23yxUU5Jkwr3cMQjANbccW+Ax/tiLtdGV8zmPof/vcwIdwFq5DLlcDUbnLIAk2KuWw+ohU7WVd+VD9znSano9Mrx++Zg4A/gHQQuQHvEQ2bP6iNncGlf9SsuUIO3DbpsYOtDXkdiKVIgLQ7xXeT/kJzTPwGnlLIgUmZP6H37OYcbb/oblAUp9VR1LFpqNGGkPYT8t7v1Om1MoFWmT+SuGvsuKNTBaqeF4YVyVrtZQOjfYXwjtLqRtrBydk+yikiSzVxP9CQjvau+Q+1m46FOk/GsIbaDP/uLyI51k7RWYNONZNcySBqrqfUKcYCwK+Ip3y22XH66IsXsnBTrdKTYR1+4igptfYceAvYTNbb0tnFMd1MxiRvSsqXfhBpMaBBEC6iW/2NJsOYtNTkjQCmDmzUE1FT0Y7283FvqUFYK/lgg2V291uNgWMuvVefXvipS+IgXNMED1O/bLXdnp/qCboL5ThZn38z2rpWkqfS2drT99q3u2djTSkLe1MmO3arTrJtb1nFZNzat97I+vh1te/83oDjTRvP8H0EM2FYEIAAA</trigger_inputs>
+        <trigger_outputs/>
+        <trigger_type>record_create</trigger_type>
+        <updation_source/>
+    </sys_hub_trigger_instance_v2>
+    <sys_hub_action_instance_v2 action="delete_multiple" query="flow=a099f3af83110354336d5a55eeaad382^sys_idNOT IN2899f3af83110354336d5a55eeaad3bf,2c99f3af83110354336d5a55eeaad3c5,6c99f3af83110354336d5a55eeaad3c6,a899f3af83110354336d5a55eeaad3c3,e899f3af83110354336d5a55eeaad3bd,e899f3af83110354336d5a55eeaad3c4,ec99f3af83110354336d5a55eeaad3c1"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <order>3</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>2899f3af83110354336d5a55eeaad3bf</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>19fad3e0-9703-46cd-8230-0e248ff777c6</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVy4riQBT9Fal1CIlRad0NijDQD2gHNz1NKFM3WlB5TD1sHfHf5yZViUF7emzojYy7uo/KOSfnmJcD4YxMyABYEI7DURKFUdQPgv7dIFyNolXYZxEFCIlHcpoBTkpICsnwvKXCVIXDYSqBamBx6CdGSsj18Yh9xlUp6H7pxrCSbLhg2CeTl1ePlFTijRokmRzOWtdCEnQFAkefG0znGPW+rM6sSEyGuGLeFO/d5sx1et9n2MGlCk4YeAR2GnIGCCSlQoFHMpozqgu5JxMtDRaQNHvKxb6d2PBcW6IZ3Sn+G588CKq5FJBZ4kRoj7ETyJbTGdV0gTcn2shWr4InoKwmDFJqhJ52a3bgqdS8yO2KpivRbBfCZPmjVYS0F3Teh1EIAsqKZ4Xc0koXm+LtuQE553ktiaMoioSK9kS1lnxldAXnQEBArXFGy5Ln67iUxZbXywgl89cCD34qijd8puLr3KdJhdtHVak/x/qsLi+p5BWJB7wGl48eUXs1FVSpExXUMP5lKiSWmKMQ1yrUEsS1E6rlRPJSf8NHbcEBP3rO9KvhRw5LxidDde48GX8X4/J4PIxitLIRcRArbZiVQFW+vsjAwvZ7D03/c4m4Am+TiB+1D97H70JxUbvv7vYebcNFYvhlkbi7pUg4GjefiX8lIeh/+F/bcVJtftVJgdJUG/XTBEHEEB4SBHbp/L9Mfc7/V6Bs/D/nIJh6B3ZjfsgQnobY0jgLgGv2lq7Zfhe+LAXhKKh/N5SF/+bz8PoHrG0uOxUJAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2899f3af83110354336d5a55eeaad3bf"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <order>7</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>2c99f3af83110354336d5a55eeaad3c5</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>ebd54c8d-7245-4d9a-9e39-2bd1a01b08a8</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4XOhmHXbdDkNiTIaWuBZcil6wTaYhIBsuzpI20W5L+PspyPdU23YbsUWG4m36MenyjmfsukYCM2yDG7HuaDqsiL4jLLLm+u8nJQlPmlKADxiiVMQ42EdFAq5N1HwtagfAg+8XyYD4fXBW/BeMUzLhA0t84L1M4SUkjbKtjMe8KE0hezY7paSSUMaja6f0gYFaH6Dg0bbZ+lfletghIVQT8FuWfUu037Yuz9KffiNiYaI4KeLGH45FALJCELUBYTVoMW4BqzYSNnPAUMgrjTanNArKR2VJAF7JOV3+jYmyzgFkidVRhzh0/euxXDiwk4mFHlynnTQ6tVIyu00ROBC/DKjU9jEXDXOtnoSOna7NmN8rW+jZawQ4H95VDEWxKBbegzKO/bWMxWzePHvcqp1J0lfVI1FajDFzhnZOld0LNlqLCmQryGtpV6yVvTrGVHJi11ulT0kS5U80iHWrnUKVRBeEq2Qjql+KQLz8HI0MUHKkPkXcLsxo4VWHvshUzkX31QEjvre+DRhkCpjGzdOzpgjb3cXbJ/BgKz4dnBysvjIHWTb0+eQD/r3Rx99llWiO12TIPgUPA8rbwhz1x6itrtvqA2jeqc0b4u0ZwndshTaGDXINUrlJAmWGlAV6vzuJgnIJkFxoUzzoOPGCKAqKW1dFGcLuqVrn/EEdE6cN5GAt0lTQM9p5+WxH9L/97SP1ysv57//WKdSlTCvvAg9lsVa7pLhzw+kGebtU9ezPtkv13zf7Vd80HW/d7Qjo3NvfkVe/JvembZPnwHmzipT3UIAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2c99f3af83110354336d5a55eeaad3c5"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent display_value="Update Record">baf174c8c3c232002841b63b12d3aee4</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f9d01dd2c31332002841b63b12d3aea1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <order>9</order>
+        <parent_ui_id>29c7e163-ba52-4ad2-b30e-401ca255345b</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>6c99f3af83110354336d5a55eeaad3c6</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>b3558f09-2b6b-4ac0-b468-aa0d9a571743</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+VVW2viQBj9KzLPISRGpfq2KMJCL1AXX7oljDNf7CyTy87F6or/fb8kkxi07Vroi6xv810m55ycY572RHAyIQPgQTgORywKo6gfBP2bQbgaRauwzyMKEBKPZDQFnFTAcsXxvKHSloX9fqqAGuBx6DOrFGTmcMA+F7qQdLd0Y1hhL0Jy7JPJ07NHCqrwRgOKTPYnrUshSboCiaOPDaZTjGZXlGeeM5sirlg0xVu3OXOd3vcZdnCphBMGHoGtgYwDAkmo1OCRlGacmlztyMQoiwUkzR8yuWsnXkRmaqIp3WrxB588CMq5BJAZcyK0x9gJVJeTGTV0gTczY1WrVy4Y6FoTDgm10ky7tXrgoTAiz+oVQ1ey2c6lTbP7WhHSXtB5H1YjCChKniXymlayeMlfHxuQc5FVkjiKMmdUtidqjBIra0o4ewISKo1TWhQiW8eFyjeiWkYoqb+WePATmb/iM7VYZz5lJW4fVaX+HOuzqrykSpQk7vAaXD54RO/0VFKtj1RQw/i3LZHUxByFuFKhkiCunFAuMyUK8w0ftQEH/OA506+GHzmMjY+G6tx5NP42xuXxeBjFaGUr4yDWxvJaAl36+iwDi7rfu2v6n0vEBXibRPyofPA2fheKs9ptd7d3XzdcJIZfFomba4qEo3H1mfhXEoL+h/+1HSdV5tedFGhDjdU/bRBEaNdfwPBLcO78d6Y+5/8LUDb+nwuQXL8BuzE/pAjPQFzTOAmAa/aWrtl+F74sBeEoqH5XlIX/5vPw/BecQ56ZFQkAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=6c99f3af83110354336d5a55eeaad3c6"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <order>5</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>a899f3af83110354336d5a55eeaad3c3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>35ae8ce7-962f-41c4-b21d-f1bd086632ba</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4XOhmHHbdDkNqToaWuBdeil6wTaYhIBsuzqI00W5L+PspyPZk23YbsUWG4m36MenyjmYc2kYGM2zDG7GOXDqsiLYpBlg8vzvBwWZT4QBSCes4RpqJGQDkqFvPtI2AKUD8Elz0f5aHRR8BaMVzzj8gkqbp0XqJ0lpJC2VbC67wnH6WoulTCo2fjhMWFUhOo7NGy8Pkr9rloFJSqCfglyT6h3q/bV2MdD7tlNTDRGBD1ZwnDpUAskIVNQFhNWgxbgGrNiY2c8BQyCuNVqtUPMpXZUkAXs0srvdOxlFnBTpM4qjLndJ+/diuHpFTi4o8qV86aHVvNGVmijJwKn4JWbHMYi4LZ1stGR0rXZsxvla30TLWG7AtvLoYi3JALb0GdQ3rcxvZs3z5+3Kq+l7izpk6qpQO2+wDkjS++CnjVDhTUV4jW0rdQz3ppmITsyaanTmaKPdKqaZzrUyplOoQrCU7IV0muKX3XhezAydPGJyhB5kzC7shMF1u57IRP5kw9KYmd9DzzaECiVka37QAcssJe7SbbPQGA2OjlYebkfpG7y7cET6Ie5m6OvPssKsV5PaBAcCp6nlTfkmUsPUZvNN9SmUZ0z2tclmtPEDnkIDewapHqDEtIEKw3oan4aF/MEJLPAuHDGafAeQwQQtbSWLorTRb3R9UscEa0D520k0F3SNNBz+mlJ/Lf07y39w8X66/nfLtZriUrYVx7EdqtiTXfpkMcHcrRZ++TZfZ/st2v+r7ZrPsy63zvasbG5d79iD/5NTyzbxx9uDhH4dQgAAA==</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=a899f3af83110354336d5a55eeaad3c3"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Ask For Approval">f8f2e9920b10030085c083eb37673abd</action_type>
+        <action_type_parent display_value="Ask For Approval">bae0a1120b10030085c083eb37673a92</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>f8f2e9920b10030085c083eb37673abd</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>e899f3af83110354336d5a55eeaad3bd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>6f54f776-6c73-4d69-9193-d5299c4c79bd</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Y32/aOhT+V5CfKdchJA28VUWVdnW3SaXbS6kiYzutJ5Ow2O7Kjfjf73HsEAaU0Tv60G0vSD6/8p2T77NjbiskGBqh8yTr8+Gwj2cBxiHGSURxEvJZeB6fh4Ri1EU5mXOILDktSgbrRyKNNVTVZcmJ5iwNetSUJc/1agV+JtRCkuVnHwYW+iAkAz8a3d510YKUUFHzEo2qLdexkCSZcQmh1w2mbYx6ubBrVlAzB1ypaIz/+Myx93TejcEDSRYO7iL+pHnOOODIiFS8i+YkZ0QX5RKNdGnAAD2zj7lcriMeRK5dn3PypMS/8OCwb+MyDo1RP4P1MvXzceZsTDSZQGWqTbkeVyEoV24kjGfESH25aXMBHxdaFLlL0WQmm+xCmnn+wQ0ErQtsvA6jAARf2D4tctdWNnkovl03IK9EXk/EtygLSuR6RbQuxcxoC6dCXPJ6xHOyWIj8Pl2UxaOokwHKvHcvYdHLZPENnqnEfd4j1OLuwVRJ7wrs49r8mZTCNvEeykDyqovUUl1KolTbCsww/WosEteYbyGtp+BGYPNoKRb6Ap7yyD3mVdfTfUYPcou2VHLlWrY/pcEwGA6jMAX+GpniVGnDXOPKknmH+BPn77xv/C+TwRFQGxnceKxb0L0I6mVa+77XQJ3W+eAcXgLBYQl4S6sBR549EkjwG5KAb+vNa+BH9OeDOIzg5zwLcdAPcMLjJKFDTGgSx9EgbDkECKAHIlN41Qpqt0I4wQ5/BIyG2hceR+e6wfEsQE93BS8mv9+i+qQxepr3X0jz57f6IP6diG7EzdaUnWVnzq+jCPu4T7n4avg7y6O4P4uHOGFnLMOzs0ESRmeEcnzG4yDiEYtpFISvoCIcHNqZWbKHpJngkp1WREeg2BHRlYfxHDwvoXq578So87dOjNNJKcH4LWnpd/puogfJxjcOji+FKfPXYfwRIBrG/+1QbBN+G9z/4Xv4h++/Pt8H0UGqbXxsr/dQWuRMWMRqg/Vu5+XqIl9+uq0qpYkWtJexLCYZP0/CIaNZMAjDmEUkijgnhIVstlrd7crlZ0q9TGdHNL++gBvJ1Y+G4VXWfrH5pE2ltd953unVNjjVlfyNie0Xv5E0Rgt1H2nAvE+eq/ZAOsjRbNhykhkYLNGbd/lqily7UzSaorzI+RR1p8hGpZaUtRkioKm1o7ZV1WrlLKYkvkCwsWyzGVmqOlLRB86A07X1O0tai8jbT/HH2REzaXQ7NrwzdkPZHVNzkWpwurmIndNx4gPqSn/diM1TMjrZKTn4I9tTXJvSRmb2CIRd84T3orv/AJt52ZVNFgAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e899f3af83110354336d5a55eeaad3bd"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Create Record">2de05916c31332002841b63b12d3aee1</action_type>
+        <action_type_parent display_value="Create Record">02f0b88cc3c632002841b63b12d3aeff</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>2de05916c31332002841b63b12d3aee1</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <order>6</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>e899f3af83110354336d5a55eeaad3c4</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>5f239905-19f3-4c90-8582-23a5f826626c</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1VTW/bMAz9K4XOhmHXbdDkNqQoMGBtgWXIpesE2mIaAbLs6aNNFuS/j7KcxOuabsN2KTDfRD5Sj08kfbdhUrAJG+WYnY/zUVXkRXGaZacXZ3k5Ksr8VBSAeMYSpqFGQjooFfLukLBHUD4YVzwf5+PxecFbMF7xjNfScuu8QO0sAYW0rYL1vMdfv5+dzA7eaimVMKjZ5O4+YZSCsjs0bLJ55vpdrgpKVAT9FMge4e7W7Yu2D8PYk5voaIwIfLKE4cqhFkhEFqAsJqwGLcA1Zs0mzngyGARxq9V6j1hK7SghC9iVld/o2oss4BZIlVUYffsj78WK5sUlOJhR5sp500OrZSMrtFETgQvwyk2Htgi4bZ1sdAzpyuyjG+VrfRMlYfsEu7chi7dEAttQZ2Del7GYLZunjzuWV1J3kvRO1VSg9idwzsjSu8Bnw1BhTYl4DW0r9QNvTfMou2DiUqcPig7pQjVPdKmVDzqFKhBPSVZIr8h+2ZnnYGSo4prSUPA2YXZtpwqsPdRCIvKvPjCJlfU18ChDCKmMbN07uuARe7rbZDcEArPx0cbKy0MjdX1vBwPQt3rXR599lhVis5lSIzgUPE8rb0gzlw5R2+0X1KZRnTLa1yWa44EdcggN0TVI9UpIcBOsNKCr5XFc9BOQxALjwh3HwQcMBYCgIbf0UJwe6pWqf8RRoHXgvI0B9JbUDTROP+2I/5L+vaR/uFh/3f+7xXolUQn7wkDstirW9JYOeRyQZ5u1d57Me2e/XfN/tV3zUdZ9b2jHxuLe/Iod/E2PLNv771momwtzCAAA</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e899f3af83110354336d5a55eeaad3c4"/>
+    <sys_hub_action_instance_v2 action="INSERT_OR_UPDATE">
+        <action_type display_value="Send Email">c1806bf4a70323008299b39f087901cb</action_type>
+        <action_type_parent display_value="Send Email">98c181d20b100300d97d8bf637673ab5</action_type_parent>
+        <attributes/>
+        <comment/>
+        <compiled_snapshot>c1806bf4a70323008299b39f087901cb</compiled_snapshot>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <generation_source/>
+        <order>4</order>
+        <parent_ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>ec99f3af83110354336d5a55eeaad3c1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>3871e130-9403-4fc5-8aef-f6085a537ae1</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1YbW/bNhD+K4Swj54j27Ed51saI1ixpB3irEPRFAIlUjZXStRIKokX+L/vKOrVdh2r8bAEy0ffHXnPHZ/nSPnLo8OIc+ockxN35IfHeOwO+gPXPelPJv5gEron44nbC4jTcWIcUYiUNBDS/L7DPDWGx8dzSbGmxOt1g1RKGuvVCvyEqYTj5ac8DCzBgnECfuf0y9eOk2AJO2oqndPHNde+kDj2KYfQGyznVKPrAto6VL1MzG8igjQCeB4rjJf5BtPcg95PwQOLDCq349AHTWNCAU6IuaIdJ8IxwVrIZWmB2snHmFeGBYs1bHmmlAgY9EUhvaCIRphxdM/0AmFkgXUds9+DYn8DuEHfbBVS6EFgsLI4YAQQOTWzl7cU3O8rdzjFGs+0TAOdyrLTggVU2W4SGuKU6/O6zQZ8TDQTsV2isc+L1YKnUfzBNtEpN6idZKoADE1Mb0yxkBwKD2cLcX9dgL1gcdbFvCtcBJiXv8IZxTJYXDDKzVHHaeRDbMfBWkvmp9rABFJwiKryeBlUkwsiKafZUUY4SVg89xIp7liWEOBH3TmHH92Qi3tYr9g87uLA1NqF08PdC7BPM/MnLJkp/Aq2gcWrjqOW6pxjparyof/eX6lBb5vRhGNWexnhzOJAskSfQao7mhe76uQS60128ZkcV7yt7VnJ7MHrTXqTyXDggXBS7rme0imxLVA6696a4mbWj64Kfzv97YG30p/hznb8ufY2bJf1teiDdeTK67VUnuVfLrwbUJu2A8HqDOkcXim2E7cptu+I7GWIq5TM3upqqujfUQqQRHmW7nltWfIfUNBTunFHI98f+cPxoOLhJAjJ2A9HeBwMKt7dw7SVEZbfvGza1sTT21RHPkfaaWIPLIUmYEJz0B/6owC1C2cuEl8IGHnxukIA6dFF1t1SIf1n3U2WmkgLBIfJl3AjlZCMsbqv9AJrxBRScFpddCMQy6uqreigpUhRlCoNYRo8DfE1Lrnjl6u7nA65dbqVK69CmIcX4HD3RYArYuOFp8Xup2E3I9ZqhTYV+UR0O6XuAbq8vcRmBbkgFZxXPF/T46ww5loc7NaivZw2pFi7jNyXK4vXwnoDnLOIZYSwej28EMhOTlG3QaMgqAnhAJ9DeyQvCH1+vomkDaGPf+xyeWP0q2N0b+c3Nh01eOQfmtJ7ZC8o/W6N035rUg/fSP0/IfVwN62CBpFU6v9JA10j9q1zRiKmlHkhnyWmbkput9D9u3EtHypPoy1EMCuxbsPfRgyjtyfLf66FwxMf76RS2G9OUEGWddanrjsIEmQw/6xZvIwCKoXQPjTmW+YEct/aMDqlWKKfHos/mAz8VcfucJTYkNu41Y6fRSoRLvW0wAr5lMbm+zQTVtfu5ksb/iscHny3SpoIqc0n69Ksl1QlNOsMgs5hqc2pdZ+F65rOsSSq00z/m/kHDv0eQyapmF42U2wZFTZl++a1bA46Olh7tpdfJHiyAe1m4B7ELR8ClrYbPM6n30JHfG32/XJzdVlNvvEznwGj4XAwept9z34HJPekT6RIkry2A78Fvv4DtY0VUtkaAAA=</values>
+    </sys_hub_action_instance_v2>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=ec99f3af83110354336d5a55eeaad3c1"/>
+    <sys_hub_sub_flow_instance_v2 action="delete_multiple" query="flow=a099f3af83110354336d5a55eeaad382"/>
+    <sys_hub_flow_logic_instance_v2 action="delete_multiple" query="flow=a099f3af83110354336d5a55eeaad382^sys_idNOT IN2c99f3af83110354336d5a55eeaad3b9,ac99f3af83110354336d5a55eeaad3bb"/>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">9c99b3af83110354336d5a55eeaad3fe</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>2c99f3af83110354336d5a55eeaad3b9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>f57e01cb-f222-49c8-a2cb-9688dfa195d7</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/+1Vy27bMBD8lYBn2dDDkivfDAcpCqQN0AS5NIGwIimbKE2qJJXEFfzvXUryA62DOmiOvZmzy+XMaAduiW5c3Th7p+fWiqUis2+PARHKY/i7JYKRGalCqKKcRjSJsyQOw/jDJCqzpIxilgCHhAREwZpjJ9WKCSe0KjogIE8gG1+Y17XReLj4aEA5zrDEhK0lbO5f76ArIZnhA6saDM503JBZ+1vpXJYSSi6xdbGjeXHdIa/zd5va49YZoZbD+XqYcrsDtWGeVRQGhL84rhiyn1UgLQ/IGhQDp81mjxgO7EbJA7ASyuE44ptfrPiJD8Zp6hsrjhIp74v7YzE418PVJThAKg11jRla6UoLym1vDuMVNNItjrG+4ab2UvsrDkq5u61ls1ZfekfIfsDuQyHSWCTBa6/UUx90VLcr/fx1x/JKqM6VoSg1Bbk/gUPvysZ5Pi3hkq9xULGGukZHC78IoruMXNbjpcTDuJL6GR/1WzoG6omP0VgYXyF+2cH3YIRX8RnH4OWeZglW0KLbaByHNnGyDYjd2IUEaw8i0d3iR+Mp9pIHcUXvj79CjajdHF9+4oOObTAEJIe0SqMwPb16k+zEgh1lo22zKp1U02k2yug0GU1Ylo/yKE9GLI3znE7oNC/ZGIaAFNaB49vtQxOGCevRU4F6r7FvS+EZVvyRwtP2vCV68V+i57/7mckLw/B/9P45esIWfWAGbd3j75i8Rx+f/s2911RYpHbnsU+7fzBf2OByCXoMPWvz3Ys6YNtf/xzN1QsHAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_flow_logic_instance_v2 action="INSERT_OR_UPDATE">
+        <attributes/>
+        <block display_value="">d099f3af83110354336d5a55eeaad314</block>
+        <comment/>
+        <connected_to>f57e01cb-f222-49c8-a2cb-9688dfa195d7</connected_to>
+        <decision_table/>
+        <display_text/>
+        <flow display_value="Student Admission Approval Flow">a099f3af83110354336d5a55eeaad382</flow>
+        <flow_variables_assigned/>
+        <generation_source/>
+        <logic_definition display_value="Else">1f781bf3c32232002841b63b12d3aee6</logic_definition>
+        <order>8</order>
+        <outputs_assigned/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic_instance_v2</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>ac99f3af83110354336d5a55eeaad3bb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <ui_id>29c7e163-ba52-4ad2-b30e-401ca255345b</ui_id>
+        <updation_source/>
+        <values>H4sIAAAAAAAA/6tWyi8tKSgtKQ7JdywuzkzPU7KKjtVRyswDiUHYZYlFmYlJOalQbkpqcmZxZn5eCEjME0ldSmVeYm5mMrJQeX5RdlpOfjlCrBYAD1ouqHEAAAA=</values>
+        <workflow_reference/>
+    </sys_hub_flow_logic_instance_v2>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=a099f3af83110354336d5a55eeaad382"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=a099f3af83110354336d5a55eeaad382"/>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>current</element>
+        <help/>
+        <hint/>
+        <label>Record</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a099f3af83110354336d5a55eeaad382</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>6c99f3af83110354336d5a55eeaad3a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_documentation action="INSERT_OR_UPDATE">
+        <element>table_name</element>
+        <help/>
+        <hint/>
+        <label>Table Name</label>
+        <language>en</language>
+        <name>var__m_sys_hub_flow_input_a099f3af83110354336d5a55eeaad382</name>
+        <plural/>
+        <sys_class_name>sys_documentation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:54</sys_created_on>
+        <sys_id>ec99f3af83110354336d5a55eeaad3ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:54</sys_updated_on>
+        <url/>
+        <url_target/>
+    </sys_documentation>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_a099f3af83110354336d5a55eeaad382"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_a099f3af83110354336d5a55eeaad382"/>
+    <sys_hub_flow action="UPDATE">
+        <sys_id>fcb223ef835dcf14336d5a55eeaad3f6</sys_id>
+        <latest_snapshot>a099f3af83110354336d5a55eeaad382</latest_snapshot>
+        <compiler_build>glide-zurich-07-01-2025__patch6-01-16-2026_02-02-2026_1554.zip</compiler_build>
+        <version_record/>
+    </sys_hub_flow>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=fcb223ef835dcf14336d5a55eeaad3f6^sys_idNOT IN7499f3af83110354336d5a55eeaad3fe"/>
+    <sys_flow_trigger_plan action="INSERT_OR_UPDATE">
+        <binding_strategy>com.snc.process_flow.engine.binding.OncePerRecord</binding_strategy>
+        <plan>{"type":"PlanProxy","persistor":{"@class":".ChunkingPlanPersistor","table":"sys_flow_trigger_plan","id":"7499f3af83110354336d5a55eeaad3fe","name":"plan","plan_signature":null}}</plan>
+        <plan_id>fcb223ef835dcf14336d5a55eeaad3f6</plan_id>
+        <snapshot>ee6e180983ed4b54336d5a55eeaad3d2</snapshot>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-12 07:39:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7499f3af83110354336d5a55eeaad3fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_overrides/>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-12 07:39:55</sys_updated_on>
+        <trigger display_value="">7c99f3af83110354336d5a55eeaad3f9</trigger>
+    </sys_flow_trigger_plan>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=fcb223ef835dcf14336d5a55eeaad3f6"/>
+</record_update>

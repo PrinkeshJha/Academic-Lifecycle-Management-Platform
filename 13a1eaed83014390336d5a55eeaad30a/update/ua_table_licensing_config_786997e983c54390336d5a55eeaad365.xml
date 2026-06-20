@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ua_table_licensing_config">
+    <ua_table_licensing_config action="INSERT_OR_UPDATE">
+        <is_fulfillment>false</is_fulfillment>
+        <license_condition/>
+        <license_model>none</license_model>
+        <license_roles/>
+        <name>x_1919953_parul_0_student_master</name>
+        <op_delete>true</op_delete>
+        <op_insert>true</op_insert>
+        <op_update>true</op_update>
+        <owner_condition/>
+        <sys_class_name>ua_table_licensing_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-05-24 13:55:44</sys_created_on>
+        <sys_id>786997e983c54390336d5a55eeaad365</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1919953_parul_0_student_master</sys_name>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name>ua_table_licensing_config_786997e983c54390336d5a55eeaad365</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-05-24 13:55:44</sys_updated_on>
+    </ua_table_licensing_config>
+</record_update>

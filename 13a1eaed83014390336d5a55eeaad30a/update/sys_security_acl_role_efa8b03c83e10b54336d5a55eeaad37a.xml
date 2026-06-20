@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-06-15 14:50:30</sys_created_on>
+        <sys_id>efa8b03c83e10b54336d5a55eeaad37a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>.x_1919953_parul_0.x_parul.dean</sys_name>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_security_acl display_value="x_1919953_parul_0_student_master">5188bcf883e10b54336d5a55eeaad302</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_efa8b03c83e10b54336d5a55eeaad37a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-06-15 14:50:30</sys_updated_on>
+        <sys_user_role display_value="x_1919953_parul_0.x_parul.dean" name="x_1919953_parul_0.x_parul.dean">23a1eaed83014390336d5a55eeaad358</sys_user_role>
+    </sys_security_acl_role>
+</record_update>

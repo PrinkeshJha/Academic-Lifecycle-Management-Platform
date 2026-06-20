@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Creates student entries</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>x53EqcNB48yWzASVUpXnXkjv27ZKqWiySXsvKxa6cHU=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1919953_parul_0.x_parul.student_admin</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>x_parul.student_admin</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-05-24 09:52:21</sys_created_on>
+        <sys_id>2fa1eaed83014390336d5a55eeaad370</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1919953_parul_0.x_parul.student_admin</sys_name>
+        <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+        <sys_update_name>sys_user_role_2fa1eaed83014390336d5a55eeaad370</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-05-24 09:52:21</sys_updated_on>
+    </sys_user_role>
+</record_update>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="d2c431b583898390336d5a55eeaad31d" label="MIS Students" max_length="40" name="x_1919953_parul_0_mis_students" type="collection">
+        <element label="Personal Email" max_length="60" name="personal_email" type="string"/>
+        <element label="Mobile Number" max_length="10" name="mobile_number" type="string"/>
+        <element label="Department" max_length="40" name="department" type="string"/>
+        <element display="true" label="Student Name" max_length="40" name="student_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Rejection Reason" max_length="255" name="rejection_reason" type="string"/>
+        <element label="Admission Date" max_length="255" name="admission_date" type="glide_date_time"/>
+        <element choice="3" label="Branch" max_length="40" name="branch" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="CSE" sequence="0" value="cse"/>
+                <element inactive_on_update="false" label="BBA" sequence="5" value="bba"/>
+                <element inactive_on_update="false" label="AIML" sequence="3" value="aiml"/>
+                <element inactive_on_update="false" label="ECE" sequence="1" value="ece"/>
+                <element inactive_on_update="false" label="MBA" sequence="6" value="mba"/>
+                <element inactive_on_update="false" label="ME" sequence="4" value="me"/>
+                <element inactive_on_update="false" label="AIDS" sequence="2" value="aids"/>
+            </choice>
+        </element>
+        <element label="University Email" max_length="100" name="email" type="string"/>
+        <element choice="3" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Rejected" sequence="2" value="rejected"/>
+                <element inactive_on_update="false" label="Pending" sequence="0" value="pending"/>
+                <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
+            </choice>
+        </element>
+        <element label="Enrolment Number" max_length="40" name="enrolment_number" type="string"/>
+    </element>
+</database>

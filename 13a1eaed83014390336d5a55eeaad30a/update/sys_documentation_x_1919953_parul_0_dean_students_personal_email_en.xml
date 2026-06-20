@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="personal_email" label="Personal email" language="en" table="x_1919953_parul_0_dean_students">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>personal_email</element>
+            <help/>
+            <hint/>
+            <label>Personal email</label>
+            <language>en</language>
+            <name>x_1919953_parul_0_dean_students</name>
+            <plural>Personal emails</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-06-20 12:54:50</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Personal email</sys_name>
+            <sys_package display_value="Parul University Student Management" source="x_1919953_parul_0">13a1eaed83014390336d5a55eeaad30a</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Parul University Student Management">13a1eaed83014390336d5a55eeaad30a</sys_scope>
+            <sys_update_name>sys_documentation_x_1919953_parul_0_dean_students_personal_email_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-06-20 12:54:50</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

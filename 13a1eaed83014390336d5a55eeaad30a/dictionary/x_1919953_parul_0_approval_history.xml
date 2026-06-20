@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="177989c683218394336d5a55eeaad3a1" label="Approval History" max_length="40" name="x_1919953_parul_0_approval_history" type="collection">
+        <element label="Action Date" max_length="40" name="action_date" type="glide_date_time"/>
+        <element choice="3" label="Action" max_length="40" name="action" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Approved" value="approved"/>
+                <element inactive_on_update="false" label="Rejected" value="rejected"/>
+            </choice>
+        </element>
+        <element label="Comments" max_length="255" name="comments" type="string"/>
+        <element label="Student" max_length="32" name="student" reference="x_1919953_parul_0_student_master" type="reference"/>
+        <element label="Action By" max_length="32" name="action_by" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="action_by"/>
+        </index>
+        <index name="index2">
+            <element name="student"/>
+        </index>
+    </element>
+</database>
