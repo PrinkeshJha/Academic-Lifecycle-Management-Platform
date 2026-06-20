@@ -189,25 +189,52 @@ This project covers the technical spectrum of what a certified ServiceNow develo
 
 ## Screenshots
 
-> *(Replace the placeholders below with actual screenshots from your instance)*
 
 **1. Student Registration & Validation**
 The registration form with auto-generated enrollment number, university email, and real-time validation feedback.
 
+<img width="1151" height="647" alt="Screenshot 2026-06-21 at 12 59 34 AM" src="https://github.com/user-attachments/assets/d6986095-875e-49eb-a780-775f20fcef70" />  
+
+
+
 **2. Dynamic Department Mapping**
 Branch selection triggering a GlideAjax call that auto-populates the department field instantly.
+
+<img width="1151" height="832" alt="Screenshot 2026-06-21 at 1 14 54 AM" src="https://github.com/user-attachments/assets/75587467-8e18-4d9f-bf86-207e51a9c35b" />  
+
+
+
+
 
 **3. Flow Designer Workflow**
 The visual approval workflow showing branch logic for approve and reject paths.
 
+<img width="1470" height="806" alt="Screenshot 2026-06-21 at 1 02 52 AM" src="https://github.com/user-attachments/assets/65bd3d64-4645-4ca5-b142-3eb0bc2c5dda" />  
+
+
+
+
 **4. Approval Governance & Audit Trail**
 The UI action buttons on the student record, and the resulting approval history entries.
+
+<img width="1146" height="470" alt="Screenshot 2026-06-21 at 1 12 55 AM" src="https://github.com/user-attachments/assets/8be23ed2-f772-48ff-b931-19f50feef9d7" /> 
+
+
+
 
 **5. Event & Notification Automation**
 The event registry, event log, and a sample approval notification email.
 
+<img width="1146" height="483" alt="Screenshot 2026-06-21 at 1 11 50 AM" src="https://github.com/user-attachments/assets/aa094df6-4faa-4d1d-a3ba-68dbbed9b9d9" />  
+
+
+
+
 **6. Analytics Dashboard**
 The dashboard showing registration stats, branch distribution, and approval metrics.
+
+<img width="1150" height="833" alt="Screenshot 2026-06-21 at 1 06 43 AM" src="https://github.com/user-attachments/assets/836eb910-3961-42c3-a6c6-5ec639db5a6c" />
+
 
 ---
 
